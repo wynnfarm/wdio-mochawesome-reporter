@@ -14,7 +14,8 @@ exports.config = {
         timeout: 20000
     },
     mochawesomeOpts: {
-        includeScreenshots:true
+        includeScreenshots:true,
+        fileName:'my_results.json'
     },
     screenshotOnReject: true,
     screenshotPath: './screenshots',

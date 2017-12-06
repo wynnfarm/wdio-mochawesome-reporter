@@ -1,6 +1,7 @@
 const expect = require('chai').expect
 const clean = require('../helper').clean
 const run = require('../helper').run
+const fs = require('fs')
 
 suite('WDIO Mochawesome Tests', () => {
     setup(clean)
@@ -261,6 +262,12 @@ suite('WDIO Mochawesome Tests', () => {
             expect(contextData).to.have.lengthOf(1)
             expect(contextData[0].title).to.contain("ERROR_phantomjs")
             expect(contextData[0].value).to.contain("screenshots/ERROR_phantomjs")
+        })
+    })
+
+    test('Should save file with name provided in configuration',function(){
+        return run(['passing'],'wdio-ma').then((results) => {
+            expect(fs.existsSync('./wdio-mochawesome-report/my_results.json')).to.be.true
         })
     })
 

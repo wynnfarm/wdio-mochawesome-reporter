@@ -39,9 +39,10 @@ module.exports = {
 
 The following configuration options are supported:
 
-|option|description|
-|---|---|
-|includeScreenshots| All screenshots captured during test execution will be embedded in the report|
+|option|data type| description|
+|---|---|---|
+|includeScreenshots | boolean | All screenshots captured during test execution will be embedded in the report|
+|filename | string | Name to use for resulting json file| 
 
 
 To use a configuration option add a ```mochawesomeOpts``` section to your wdio config.  Then add any options.
@@ -51,7 +52,8 @@ module.exports = {
   // ...
   reporters: ['dot', 'mochawesome'],
   mochawesomeOpts: {
-      includeScreenshots:true
+      includeScreenshots:true,
+      filename:"my_results.json"
   },
   // ...
 };
