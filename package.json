@@ -20,7 +20,8 @@
     "eslint": "eslint ./lib test/",
     "hub:start": "phantomjs --webdriver=4444 2>&1 > phantom.log &",
     "hub:stop": "ps -eaf | grep -i phantomjs | awk {'print $2'} | xargs kill -9",
-    "test": "mocha ./test/specs/tests.js"
+    "test": "mocha ./test/specs/tests.js",
+    "test-v3": "mocha ./test/specs/tests-v3.js"
   },
   "keywords": [
     "mochawesome",
